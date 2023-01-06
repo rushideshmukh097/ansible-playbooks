@@ -1,0 +1,6 @@
+--- #my 1st playbook
+- hosts: dev
+  user: tata
+  become: yes  
+  connection: ssh
+  gather_facts: yes  

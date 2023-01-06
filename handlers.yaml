@@ -1,0 +1,21 @@
+--- # handelers
+- hosts: dev
+  user: tata
+  become: yes
+  connection: ssh
+  gather_facts: yes
+
+
+  tasks:
+    - name: install apache
+      action: yum pkg=httpd  state=present
+      notify:
+        - start
+        - deploy
+
+
+  handlers:
+    - name: start
+      action: service name=httpd state=started
+    - name: deploy
+      action: copy src=rushi.html dest=/var/www/html    

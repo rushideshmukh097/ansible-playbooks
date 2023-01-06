@@ -1,0 +1,17 @@
+--- #condition
+
+- hosts: dev
+  user: tata
+  connection: ssh
+  become: yes
+
+
+
+  vars: 
+     value: 10
+
+
+  tasks:
+   - name: check value
+     command: mkdir deshmukh
+     when: value==10    

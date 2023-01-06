@@ -1,0 +1,15 @@
+--- #loops
+- hosts: dev
+  user: tata
+  become: yes
+
+
+
+
+  tasks:
+    - name: create users
+      user: name="{{item}}" state=present
+      loop:
+        - "viki"
+        - "vitthal"
+        - "shubham"  

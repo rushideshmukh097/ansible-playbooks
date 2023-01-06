@@ -1,0 +1,11 @@
+--- # playbook to install tree
+- hosts: all
+  user: tata
+  become: yes
+  connection: ssh
+  gather_facts: yes
+
+
+  tasks:
+    - name: install tree on machine
+      action: yum pkg=tree state=present  
